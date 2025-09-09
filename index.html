@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11.10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Фон */
+    body {
+      background: #111 url("noise.gif") repeat;
+      background-size: cover;
+      color: #e5e5e5;
+      font-family: "Courier New", monospace;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Атмосферные боковые картинки */
+    .side-img {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      width: 220px;
+      background-repeat: no-repeat;
+      background-size: auto 100%; /* чтобы картинка не обрезалась */
+      background-position: center;
+      filter: brightness(3) contrast(1.5) drop-shadow(0 0 15px rgba(0,0,0,0)); /* красноватое свечение */
+      transition: opacity 0.5s ease;
+    }
+
+    .left-top {
+      left: 0;
+      top: 5%;
+      height: 260px;
+      background-image: url("eye.gif");
+      opacity: 0.7;
+    }
+
+
+    .right-top {
+      right: 0;
+      top: 10%;
+      height: 280px;
+      background-image: url("handprint.png");
+      opacity: 0.7;
+    }
+
+
+    /* Основной текст */
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Скрытый текст */
+    .hidden-text {
+      color: transparent;
+      text-decoration: underline dashed red;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .hidden-text:hover {
+      color: #ff0000;
+      background: rgba(255, 0, 0, 0.1);
+    }
+
+    /* Перечёркнутый текст */
+    .scratched {
+      text-decoration: line-through;
+      color: #777;
+    }
+
+    /* Пропадающий текст */
+    .fade-text {
+      opacity: 1;
+      transition: none;
+    }
+
+    /* Финальный блок */
+    .final-block {
+      border: 2px solid red;
+      background: rgba(20, 0, 0, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-top: 5rem;
+      box-shadow: 0 0 20px red;
+    }
+
+    .final-block a {
+      background: red;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .final-block a:hover {
+      background: black;
+      color: red;
+      box-shadow: 0 0 15px red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Боковые картинки -->
+  <div class="side-img left-top"></div>
+  <div class="side-img left-bottom"></div>
+  <div class="side-img right-top"></div>
+  <div class="side-img right-bottom"></div>
+
+  <main>
+    <!-- Заголовок -->
+    <h1 class="text-4xl font-bold text-red-600 mb-10">11.10</h1>
+
+    <!-- Записи -->
+    <article class="mb-10">
+      <h2 class="text-xl font-bold mb-2">#*.09</h2>
+      <p>Сегодня произошло нечто странное. Может мне показалось, но... Ребята вели себя по-другому... Они странно выглядили. 
+      Пустые глаза, неестественная улыбка, дерганные какие то...
+      Они <span class="fade-text">смотрели слишком долго в пустоту</span>, будто не замечали меня.
+      Может это все из-за недосыпа? Может показалось...
+    </article>
+
+    <article class="mb-10">
+      <h2 class="text-xl font-bold mb-2">#6.09</h2>
+      <p>Это уже точно не смешно, если они так решили меня разыграть, то это слишком. 
+      Я сидел с ними и пытался не обращать внимания на странности, но это перебор.
+      Они начали делать все синхронно. Моргать, смеяться, кашлять - ВСЕ СИНХРОННО!  
+      С ними точно что-то не так... А может... <span class="hidden-text">со мной что-то не так?</span></p>
+    </article>
+
+    <article class="mb-10">
+      <h2 class="text-xl font-bold mb-2">*8.09</h2>
+      <p>НЕТ, НЕТ, НЕТ ТЕПЕРЬ Я УВЕРЕН ЭТО ОНИ <span class="scratched">ШИЗАНУЛИСЬ</span>!
+      Я РЕШИЛ ПРОСЛЕДИТЬ ЗА НИМИ, ТАК КАК БЫЛ УВЕРЕН, <span class="fade-text">ЧТО ОНИ ЧТО-ТО ЗАМЫШЛЯЮТ</span>.
+      КОГДА Я НАШЕЛ ИХ, ТО УВИДЕЛ КАК ОНИ МОЛЧА СМОТРЯТ НА ДРУГ ДРУГА И <span class="scratched">ОТВРАТИТЕЛЬНО УХМЫЛЯЮТСЯ</span></p> УЛЫБАЮТСЯ ДО УШЕЙ. ОНИ ДАЖЕ НЕ РАЗГОВАРИВАЛИ,
+      ПРОСТО МОЛЧАЛИ И СМОТРЕЛИ ДРУГ НА ДРУГА, А ПОСЛЕ РЕЗКО ПОВЕРНУЛИСЬ В МОЮ СТОРОНУ.
+      Я сразу же убежал, <span class="fade-text">я не знаю, что мне делать</span>...
+    </article>
+
+    <article class="mb-10">
+      <h2 class="text-xl font-bold mb-2">09.09</h2>
+      <p>Я оставляю эти записи здесь.  
+      Если ты читаешь это — <span class="hidden-text">то скорее всего скоро и они найдут это</span>.  
+      <span class="scratched">Я не могу никому доверять.</span></p>
+      <span class="hidden-text">я буду дейтсвовать аккуратно...</span>
+
+      Они что то планируют, я знаю это, но доказать не могу.
+      <span class="fade-text">Я постараюсь помочь</span>.
+    </article>
+
+    <!-- Финальный блок -->
+    <div class="final-block">
+      <p class="mb-4 text-lg font-bold text-red-500">⚠ Скоро они и сюда доберутся</p>
+      <p class="mb-4">Но у нас ещё есть шанс.  
+      Если хочешь мне помочь, то переходи:</p>
+      <a href="https://t.me/your_channel" target="_blank">11.09</a>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script>
+    // Резкое пропадание текста
+    const fading = document.querySelectorAll('.fade-text');
+    setInterval(() => {
+      fading.forEach(el => {
+        el.style.opacity = (Math.random() > 0.5) ? 1 : 0;
+      });
+    }, 1500);
+
+    // Мигание только у shadow (левая нижняя картинка)
+    const shadowImg = document.querySelector('.left-bottom');
+    setInterval(() => {
+      shadowImg.style.opacity = (Math.random() > 0.5) ? 0.7 : 0;
+    }, 1200);
+  </script>
+</body>
+</html>
+
+
